@@ -14,7 +14,7 @@ export default function Home() {
     event.preventDefault()
     const term = searchInputRef.current.value
     if (!term.trim()) return
-    router.push(`/search?term=${term.trim()}`)
+    router.push(`/search?term=${term.trim()}&searchType=`)
   }
 
   return (
@@ -41,14 +41,22 @@ export default function Home() {
           }
         >
           <SearchIcon className={"h-5 text-gray-500 mr-3"} />
-          <input ref={searchInputRef} type={"text"} className={"flex-grow focus:outline-none"} />
+          <input
+            ref={searchInputRef}
+            type={"text"}
+            className={"flex-grow focus:outline-none"}
+          />
           <MicrophoneIcon className={"h-5"} />
         </div>
-        <div className={"flex flex-col sm:flex-row w-[50%] space-y-2 mt-8 sm:space-y-0 sm:space-x-4 justify-center"}>
+        <div
+          className={
+            "flex flex-col sm:flex-row w-[50%] space-y-2 mt-8 sm:space-y-0 sm:space-x-4 justify-center"
+          }
+        >
           <button onClick={search} className={"btn"}>
             Google Search
           </button>
-          <button className={"btn"}>I'm Feeling Lucky</button>
+          <button className={"btn"}>I`m Feeling Lucky</button>
         </div>
       </form>
 
