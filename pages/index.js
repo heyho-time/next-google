@@ -17,6 +17,19 @@ export default function Home() {
     router.push(`/search?term=${term.trim()}&searchType=`)
   }
 
+  async function randomSearch(event) {
+    event.preventDefault()
+    const randomTerm = await fetch("https://random-words-api.vercel.app/word/")
+      .then((response) => {
+        return response.json()
+      })
+      .then(function (res) {
+        return res[0].word
+      })
+    if (!randomTerm) return
+    router.push(`/search?term=${randomTerm}&searchType=`)
+  }
+
   return (
     <div>
       <Head>
@@ -56,7 +69,9 @@ export default function Home() {
           <button onClick={search} className={"btn"}>
             Google Search
           </button>
-          <button className={"btn"}>I`m Feeling Lucky</button>
+          <button onClick={randomSearch} className={"btn"}>
+            I`m Feeling Lucky
+          </button>
         </div>
       </form>
 
