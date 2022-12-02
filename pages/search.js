@@ -1,7 +1,7 @@
 import Head from "next/head"
 import SearchHeader from "../components/SearchHeader"
 
-function Search(props) {
+function Search() {
   return (
     <>
       <Head>
