@@ -70,7 +70,7 @@ export default function Home() {
             Google Search
           </button>
           <button onClick={randomSearch} className={"btn"}>
-            I`m Feeling Lucky
+            Random search !
           </button>
         </div>
       </form>
