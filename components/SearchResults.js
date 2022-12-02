@@ -1,4 +1,5 @@
 import parse from "html-react-parser"
+import PaginationButtons from "./PaginationButtons"
 
 export default function SearchResults({ results }) {
   return (
@@ -7,6 +8,7 @@ export default function SearchResults({ results }) {
         About {results.searchInformation.formattedTotalResults} results (
         {results.searchInformation.formattedSearchTime} sec)
       </p>
+
       {results.items.map((result) => (
         <div key={result.link} className="max-w-xl mb-8">
           <div className="group">
@@ -25,6 +27,8 @@ export default function SearchResults({ results }) {
           <p className="text-gray-500">{parse(result.htmlSnippet)}</p>
         </div>
       ))}
+
+      <PaginationButtons results={results} />
     </div>
   )
 }
