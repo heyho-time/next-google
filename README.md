@@ -1,5 +1,5 @@
-
 ## Init
+
 npx create-next-app
 
 cd folder
@@ -19,4 +19,13 @@ npx tailwindcss init -p
 ```jsx
 npm install next-auth
 ```
+
 sign in 까지4106.
+
+<br>
+
+---
+
+## google search engine
+
+search 엔진 생성 - api key, context key
