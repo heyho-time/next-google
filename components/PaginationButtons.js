@@ -22,7 +22,7 @@ export default function PaginationButtons({ results }) {
       )}
 
       {startIndex < 90 &&
-        results.searchInformation.totalResults - startIndex > 10 && (
+        results?.searchInformation.totalResults - startIndex > 10 && (
           <Link
             href={`/search?term=${router.query.term}&searchType=${
               router.query.searchType
